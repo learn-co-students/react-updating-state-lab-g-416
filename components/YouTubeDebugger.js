@@ -27,11 +27,6 @@ class YouTubeDebugger extends React.Component {
         }
       )
     });
-
-
-    console.log("THIS IS SETTINGS:");
-
-    console.log(this.state.settings);
   }
 
   setResolution(){
@@ -44,11 +39,6 @@ class YouTubeDebugger extends React.Component {
         }
       )
     });
-
-
-    console.log("THIS IS SETTINGS:");
-
-    console.log(this.state.settings);
   }
 
   render(){
