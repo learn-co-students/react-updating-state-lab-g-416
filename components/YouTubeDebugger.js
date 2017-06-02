@@ -15,11 +15,11 @@ class YouTubeDebugger extends React.Component {
       },
     };
 
-    this.changeBitrate = this.changeBitrate.bind(this);
-    this.changeResolution = this.changeResolution.bind(this);
+    this.handleChangeBitrate = this.handleChangeBitrate.bind(this);
+    this.handleChangeResolution = this.handleChangeResolution.bind(this);
   }
 
-  changeBitrate() {
+  handleChangeBitrate() {
     this.setState({
       settings: Object.assign({}, this.state.settings, {
         bitrate: 12,
@@ -27,12 +27,12 @@ class YouTubeDebugger extends React.Component {
     });
   };
 
-  changeResolution() {
+  handleChangeResolution() {
     this.setState({
       settings: Object.assign({}, this.state.settings, {
-        video: {
+        video: Object.assign({}, this.state.settings.video, {
           resolution: '720p',
-        }
+        })
       }),
     });
   };
@@ -40,8 +40,8 @@ class YouTubeDebugger extends React.Component {
   render() {
     return(
       <div>
-        <button className="bitrate" onClick={this.changeBitrate}>{this.state.settings.bitrate}</button>
-        <button className="resolution" onClick={this.changeResolution}>{this.state.settings.video.resolution}</button>
+        <button className="bitrate" onClick={this.handleChangeBitrate}>{this.state.settings.bitrate}</button>
+        <button className="resolution" onClick={this.handleChangeResolution}>{this.state.settings.video.resolution}</button>
       </div>
     );
   };
